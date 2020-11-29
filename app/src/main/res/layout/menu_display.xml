@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <!--  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"-->
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sothree="http://schemas.android.com/apk/hungryfox_prototype"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SlidingUpPanel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+
+    android:gravity="bottom"
+    android:orientation="vertical"
+    app:umanoPanelHeight="0dp"
+
+    sothree:shadowHeight="4dp">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/OfflineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                tools:visibility="gone">
+
+                <Button
+                    android:id="@+id/buttonTryAgain"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/rndbtn"
+                    android:fontFamily="@font/msbold"
+                    android:text="TRY AGAIN"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView24"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="114dp"
+                    android:layout_height="106dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/antenna" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/msbold"
+                    android:text="SEEMS LIKE YOU'RE OFFLINE"
+                    android:textColor="#000000"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.543"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.79" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/AppBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:visibility="visible">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="-20dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:animateLayoutChanges="true">
+
+                            <ImageView
+                                android:id="@+id/imageView251"
+                                android:layout_width="21dp"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="7dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.925"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.733" />
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TextView"
+                                android:textColor="#000000"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="@+id/imageView251"
+                                app:layout_constraintStart_toStartOf="@+id/imageView251"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView251" />
+
+                            <TextView
+                                android:id="@+id/textView311"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/msbold"
+                                android:text="@string/cafe_name"
+                                android:textColor="#000000"
+                                android:textSize="13sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.685" />
+                            <!-- app:srcCompat="@drawable/bbre_logo"-->
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="2dp"
+                                android:elevation="5dp"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="5dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView311"
+                                app:layout_constraintEnd_toStartOf="@+id/textView311"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/textView311">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/imageView111112"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_margin="2dp"
+
+                                        android:elevation="10dp"
+                                        android:scaleType="fitXY"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="-70dp"
+                    android:animateLayoutChanges="true"
+                    android:scrollbarStyle="outsideInset"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="63dp"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/ppr"
+                                android:text="Hello,"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/ppr"
+                                android:text="Abhishek !"
+                                android:textColor="#000000"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/textView2"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imageView11111"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_margin="2dp"
+
+                                android:layout_marginEnd="30dp"
+                                android:elevation="10dp"
+                                android:scaleType="fitXY"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.897"
+                                app:layout_constraintStart_toEndOf="@+id/textView5"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.6" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <ProgressBar
+                    android:id="@+id/LoaderBar"
+                    style="@android:style/Widget.Holo.Light.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/aermenuGrey"
+                    android:progressTint="@color/aermenuGreen"
+                    android:visibility="gone" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardViewCovidNotice"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:alpha="0.6"
+                    android:backgroundTint="?attr/colorHighlight"
+                    android:padding="3dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.9"
+                        android:backgroundTint="?attr/colorHighlight"
+                        android:padding="2dp">
+
+                        <Button
+                            android:id="@+id/buttonHideCovidPanel"
+                            android:layout_width="63dp"
+                            android:layout_height="38dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:fontFamily="@font/msbold"
+                            android:text="HIDE"
+                            android:textColor="?attr/colorHighlight"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.08"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.661" />
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="40dp"
+                            android:layout_height="29dp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView14"
+                            app:layout_constraintHorizontal_bias="0.612"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.591"
+                            app:srcCompat="@drawable/aa" />
+
+                        <ImageView
+                            android:id="@+id/imageView14"
+                            android:layout_width="68dp"
+                            android:layout_height="44dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.953"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.714"
+                            app:srcCompat="@drawable/safety" />
+
+                        <TextView
+                            android:id="@+id/textViewCovidCheck1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/msbold"
+                            android:text="Thermal Checks"
+                            android:textColor="#FFFFFF"
+                            android:textSize="8sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.629"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.505" />
+
+                        <TextView
+                            android:id="@+id/textViewCovidCheck2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/msbold"
+                            android:text="Sanitization"
+                            android:textColor="#FFFFFF"
+                            android:textSize="8sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/textViewCovidCheck1"
+                            app:layout_constraintStart_toStartOf="@+id/textViewCovidCheck1"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewCovidCheck1"
+                            app:layout_constraintVertical_bias="0.121" />
+
+                        <TextView
+                            android:id="@+id/textViewCovidLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/msbold"
+                            android:text="THIS RESTAURANT FOLLOWS COVID-19 SAFETY NORMS"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.186" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/NSV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
+                    android:fillViewport="true"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/cncTokenLL"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/textView42"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/ppr"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:text="Your token Number is "
+                                android:textStyle="italic" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/l"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/textView40"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/ppr"
+                                android:text="Full Already?"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/buttonConfirm2"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/whiterndbtn"
+                                android:backgroundTint="?attr/colorHighlight"
+                                android:fontFamily="@font/msbold"
+                                android:text="Request Bill"
+                                android:textColor="#FFFFFF"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.888"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView41"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="No? Wanna Order More?"
+                            android:textStyle="italic"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textView34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/ppr"
+                            android:gravity="start"
+                            android:text="Select Category"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="18sp"
+                            android:textStyle="normal|bold"
+                            android:visibility="visible" />
+
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" >
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/categoriesRecyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="165dp"
+                                    android:backgroundTint="#FFFFFF"
+                                    android:padding="10dp"
+                                    android:visibility="visible"
+                                    tools:itemCount="1" />
+                            </LinearLayout>
+                        </androidx.core.widget.NestedScrollView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingStart="20dp"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/textView27"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/ppr"
+                                android:gravity="start"
+                                android:text="Burger Menu"
+                                android:textAllCaps="false"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <Switch
+                                android:id="@+id/switch1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/msbold"
+                                android:text="Veg Only"
+                                android:textAllCaps="true"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+                        </ScrollView>
+
+                        <TextView
+                            android:id="@+id/VegLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/msbold"
+                            android:text="VEG"
+                            android:textColor="#317A34"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/vegLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/msbold"
+                            android:text="NON-VEG"
+                            android:textColor="#F44336"
+                            android:visibility="gone" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:animateLayoutChanges="true"
+                            android:scrollbarStyle="outsideInset"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardElevation="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:animateLayoutChanges="true">
+
+                                <ImageView
+                                    android:id="@+id/imageView26"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:elevation="10dp"
+                                    android:visibility="invisible"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+                                    app:layout_constraintEnd_toEndOf="@+id/imageView25"
+                                    app:layout_constraintHorizontal_bias="1.0"
+                                    app:layout_constraintStart_toStartOf="@+id/imageView25"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView25"
+                                    app:layout_constraintVertical_bias="0.15"
+                                    app:srcCompat="@drawable/rndbtn" />
+
+                                <ImageView
+                                    android:id="@+id/imageView25"
+                                    android:layout_width="21dp"
+                                    android:layout_height="30dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.925"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.733"
+                                    app:srcCompat="@drawable/bag" />
+
+                                <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="46dp"
+                                    android:layout_height="31dp"
+                                    android:layout_marginStart="10dp"
+                                    android:elevation="10dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/textView3"
+                                    app:layout_constraintHorizontal_bias="1.0"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.724" /> <!--app:srcCompat="@drawable/bbre_logo"
+-->
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="60dp"
+                                    android:background="#FFFFFF"
+                                    android:fontFamily="@font/msbold"
+                                    android:text="@string/cafe_name"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.685" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/menuVeg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:itemCount="1" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/menuNonVeg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:itemCount="1" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardviewblank"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/textView36"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/msbold"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:text="Powered by AERMENU"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/orderCompleteButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="-60dp"
+                    android:alpha="0.8"
+                    android:elevation="0dp"
+                    android:fadingEdgeLength="0dp"
+                    android:fontFamily="@font/msbold"
+                    android:foregroundTint="#F3F3F3"
+
+                    android:gravity="center_horizontal"
+                    android:src="@drawable/cart"
+                    android:text="CART"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10dp"
+                    android:theme="@style/MyMaterialTheme"
+                    android:tint="#F6F6F6"
+                    android:visibility="visible"
+                    app:backgroundTint="#1c2833"
+                    app:elevation="0dp"
+                    app:rippleColor="#FFFFFF" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/orderCompleteButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="-90dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/rndbtn"
+                    android:elevation="0dp"
+                    android:fadingEdgeLength="0dp"
+                    android:fontFamily="@font/msbold"
+                    android:foregroundTint="#F3F3F3"
+                    android:src="@drawable/payment"
+                    android:text="+ Request Bill"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="10dp"
+                    android:theme="@style/MyMaterialTheme"
+                    android:tint="#F6F6F6"
+                    android:visibility="gone"
+                    app:backgroundTint="#222222"
+                    app:elevation="0dp"
+                    app:rippleColor="#FFFFFF" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/orderCompleteButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="-90dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/rndbtn"
+                    android:elevation="0dp"
+                    android:fadingEdgeLength="0dp"
+                    android:fontFamily="@font/msbold"
+                    android:foregroundTint="#F3F3F3"
+                    android:src="@drawable/payment"
+                    android:text="+ Request Captain"
+
+                    android:textColor="#FFFFFF"
+                    android:textSize="10dp"
+                    android:theme="@style/MyMaterialTheme"
+                    android:tint="#F6F6F6"
+                    android:visibility="gone"
+                    app:backgroundTint="#222222"
+                    app:elevation="0dp"
+                    app:rippleColor="#FFFFFF" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:animateLayoutChanges="true">
+
+        <Button
+            android:id="@+id/FireOrderButtonUI"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/msbold"
+            android:text="Place Order"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:visibility="invisible">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+
+            android:fontFamily="@font/msbold"
+            android:text="No Items in your Cart (Yet) ! "
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ActionButtonsLayoutCard"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignTop="@id/cartsummaryCard"
+            android:layout_marginTop="-35dp"
+            android:backgroundTint="#000000"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/rqstbillBtn2"
+                    android:layout_width="120dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toStartOf="@id/rqstbillBtn"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_border"
+                    android:text="+Request Water"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/rqstbillBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="33dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/rounded_border"
+                    android:gravity="center_horizontal"
+                    android:text="+Request Bill"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/rqstCaptainBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toEndOf="@id/rqstbillBtn"
+                    android:background="@drawable/rounded_border"
+                    android:text="+Request Captain"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp">
+
+                </Button>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cartsummaryCard"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+            android:visibility="visible"
+            app:cardBackgroundColor="#000000">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/msbold"
+                    android:text="TOTAL : Rs. "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.715"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/TVCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/msbold"
+                    android:shadowColor="#FFFFFF"
+                    android:text="CART :"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.119"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/msbold"
+                    android:textColor="#BFBFBF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/TVCart"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/msbold"
+                    android:textColor="#BFBFBF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.483" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="-50dp"
+            android:background="#00000000 "
+            android:backgroundTint="#00000000 ">
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shoppingcartsummaryrecyclerviewUI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="65dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
